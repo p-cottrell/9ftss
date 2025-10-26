@@ -1,12 +1,98 @@
-h1 {
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  font: 1.3rem;
-  text-align: center;
+/* home.css */
+html {
+  scroll-behavior: smooth;
 }
 
+section {
+  scroll-margin-top: var(--header-h);
+}
+
+
+
+
 .home p {
-  text-align: center;
-  padding: 3rem 1rem;
   text-align: justify;
+  padding: 3rem 1rem;
+}
+
+
+/* Override on phones */
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: var(--header-ph);
+  }
+}
+
+
+:root{
+  --clr-dark:#000;
+  --clr-light:#fff;
+  --hover:#00e7ff;
+  --accent-a:#ffda5f; /* gold */
+  --accent-b:#ff44a3; /* magenta */
+}
+
+/* ===== Neon horizon background (totally different vibe) ===== */
+.wf80{
+  position:relative;
+  font-weight: 700;
+  isolation:isolate;
+  min-height: min(70vh, 680px);
+  display:grid;
+  place-items:center;
+  color:var(--clr-light);
+  overflow:hidden;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,.12), transparent 45%),
+    linear-gradient(#020203, #03040a 40%, #06020c);
+}
+
+
+
+/* sun glow at horizon */
+.wf80::before{
+  content:"";
+  position:absolute; left:50%; bottom:35%;
+  width: min(90vmin, 740px); height: min(90vmin, 740px);
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(255,218,95,.85) 0 28%,
+      rgba(255,68,163,.9) 40%,
+      rgba(255,68,163,.35) 55%,
+      transparent 65%);
+  filter: blur(20px) saturate(1.1);
+  opacity:.65;
+  z-index:0;
+}
+
+.wf80 .inner{ position:relative; z-index:1; text-align:center; }
+
+/* ===== SVG Title ===== */
+.wf80-title{
+  width: min(92vw, 1200px);
+  height: auto;
+  display:block;
+  margin-inline:auto;
+}
+
+/* animate shine rect */
+.wf80-title .shine{
+  transform: translateX(-60%);
+  animation: wf80-sweep 3s cubic-bezier(.3,.6,.2,1) infinite 1s;
+}
+@keyframes wf80-sweep{
+  0%   { transform: translateX(-60%) skewX(-8deg); }
+  60%  { transform: translateX(35%)  skewX(-8deg); }
+  100% { transform: translateX(120%) skewX(-8deg); }
+}
+
+/* ===== Copy ===== */
+.wf80-copy{
+  max-width: 72ch;
+  margin: .75rem auto 0;
+  font: 500 clamp(1rem, .35vw + .95rem, 1.125rem)/1.6 system-ui, Segoe UI, Roboto, sans-serif;
+  color: #e9f6ff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.55);
 }

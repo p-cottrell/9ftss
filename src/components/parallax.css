@@ -25,3 +25,9 @@
         width: 60%;
     }
 }
+
+@media (max-width: 768px) {
+  .bg-image-four {
+    height: 30vh;
+  }
+}
