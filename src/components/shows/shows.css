@@ -1,0 +1,23 @@
+
+.bit-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+  background: var(--clr-dark);
+  opacity: .7;
+  color: var(--clr-light);
+  border-radius: 8px;
+}
+
+
+.bit-wrap a:hover {
+  filter: drop-shadow(0 0 8px var(--hover));
+}
+
+
+@media (max-width: 768px) {
+  .bit-wrap {
+    padding: 0.5rem 0.75rem 1.5rem;
+    background: transparent;
+  }
+}

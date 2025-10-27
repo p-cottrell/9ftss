@@ -1,98 +1,81 @@
-/* home.css */
+/* =======================================
+   Base Layout
+   ======================================= */
+
 html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: var(--header-h);
+.home {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--clr-dark);
+  color: var(--clr-light);
 }
 
-
-
+.home section {
+  scroll-margin-top: var(--header-h);
+  text-align: center;
+}
 
 .home p {
   text-align: justify;
-  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
-
-/* Override on phones */
+/* Override scroll margin on smaller screens */
 @media (max-width: 768px) {
-  section {
+  .home section {
     scroll-margin-top: var(--header-ph);
+  }
+  .section-header{
+    font-size: 20vw !important;
+    text-shadow: 3px 3px 0 var(--accent-a), 6px 6px 0 var(--accent-b), 9px 9px 0 var(--hover);
   }
 }
 
+/* =======================================
+   Section Container
+   ======================================= */
 
-:root{
-  --clr-dark:#000;
-  --clr-light:#fff;
-  --hover:#00e7ff;
-  --accent-a:#ffda5f; /* gold */
-  --accent-b:#ff44a3; /* magenta */
+.section-container {
+  height: 95vh;
+  background: url("https://w.wallhaven.cc/full/vm/wallhaven-vm6vgm.png") center / 100% 100% no-repeat;
+  transition: background-size 5s ease;
+  background-size: 100% 100%;
+  background-position: center 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  margin: 0 auto;
 }
 
-/* ===== Neon horizon background (totally different vibe) ===== */
-.wf80{
-  position:relative;
-  font-weight: 700;
-  isolation:isolate;
-  min-height: min(70vh, 680px);
-  display:grid;
-  place-items:center;
-  color:var(--clr-light);
-  overflow:hidden;
-  padding: clamp(1.25rem, 3vw, 2.5rem);
-  background:
-    radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,.12), transparent 45%),
-    linear-gradient(#020203, #03040a 40%, #06020c);
+.section-container:hover {
+  background-size: 150% 150%;
 }
 
 
+/* =======================================
+   Font Styling
+   ======================================= */
 
-/* sun glow at horizon */
-.wf80::before{
-  content:"";
-  position:absolute; left:50%; bottom:35%;
-  width: min(90vmin, 740px); height: min(90vmin, 740px);
-  transform: translateX(-50%);
-  background:
-    radial-gradient(circle at 50% 50%,
-      rgba(255,218,95,.85) 0 28%,
-      rgba(255,68,163,.9) 40%,
-      rgba(255,68,163,.35) 55%,
-      transparent 65%);
-  filter: blur(20px) saturate(1.1);
-  opacity:.65;
-  z-index:0;
+@font-palette-values --retro {
+  font-family: "Honk";
+  base-palette: 5;
 }
 
-.wf80 .inner{ position:relative; z-index:1; text-align:center; }
-
-/* ===== SVG Title ===== */
-.wf80-title{
-  width: min(92vw, 1200px);
-  height: auto;
-  display:block;
-  margin-inline:auto;
+.section-header{
+  font-family: "Honk", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 14, "SHLN" 50;
+  font-palette: --retro;
+  font-size: 8vw;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0 var(--accent-a), 6px 6px 0 var(--accent-b), 9px 9px 0 var(--hover);
+  margin: 0;
+  text-transform: uppercase;
 }
 
-/* animate shine rect */
-.wf80-title .shine{
-  transform: translateX(-60%);
-  animation: wf80-sweep 3s cubic-bezier(.3,.6,.2,1) infinite 1s;
-}
-@keyframes wf80-sweep{
-  0%   { transform: translateX(-60%) skewX(-8deg); }
-  60%  { transform: translateX(35%)  skewX(-8deg); }
-  100% { transform: translateX(120%) skewX(-8deg); }
-}
-
-/* ===== Copy ===== */
-.wf80-copy{
-  max-width: 72ch;
-  margin: .75rem auto 0;
-  font: 500 clamp(1rem, .35vw + .95rem, 1.125rem)/1.6 system-ui, Segoe UI, Roboto, sans-serif;
-  color: #e9f6ff;
-  text-shadow: 0 1px 0 rgba(0,0,0,.55);
-}

@@ -10,7 +10,7 @@
 .music-wrapper {
   position: relative;
   width: min(96vw, 1200px);
-  height: clamp(320px, 58vh, 520px);
+  height: 700px;
 }
 
 /* === GRID: desktop/tablet => [ BIG | small | small ] ================= */
@@ -110,8 +110,10 @@
 /* === Nav buttons ===================================================== */
 .nav {
   position: absolute;
-  left: 0; right: 0; bottom: clamp(.6rem, 3vh, 1.25rem);
-  display: flex; justify-content: center; gap: clamp(.6rem, 2vw, 1rem);
+  left: 0; right: 0; bottom: 0;
+  display: flex; 
+  justify-content: center; 
+  gap: 20px;
   z-index: 2;
 }
 .nav button {

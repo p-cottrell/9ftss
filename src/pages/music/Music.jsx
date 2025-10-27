@@ -47,11 +47,12 @@ export default function Music({ slides = [] }) {
           ))}
         </div>
 
-        <div className="nav">
+        
+      </div>
+      <div className="nav">
           <button className="prev" onClick={prev} aria-label="Previous">◁</button>
           <button className="next" onClick={next} aria-label="Next">▷</button>
         </div>
-      </div>
     </section>
   );
 }
@@ -60,21 +61,21 @@ const DEFAULT_SLIDES = [
   {
     id: "7odd",
     name: "7 ODD INCHES OF PARTY",
-    description: "Loud, chaotic, and ready for the pit.",
+    description: "Lorem ipsum dolor sit amet",
     img: seven,
     href: "#",
   },
   {
     id: "partyviolence",
     name: "PARTYVIOLENCE",
-    description: "Thrash energy under neon lights.",
+    description: "Lorem ipsum dolor sit amet",
     img: party,
     href: "#",
   },
   {
     id: "cheap",
     name: "CHEAP BEER AND $2 THONGS",
-    description: "Raw riffs, cheap laughs, pure sweat.",
+    description: "Lorem ipsum dolor sit amet.",
     img: cheap,
     href: "#",
   },
